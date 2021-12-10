@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Days Off!</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Welcome to NoDaysOff!</h1>
+    <form action="/login" method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-primary"> Login </button>
+      </form>
+      <br>
+      <form action="/register" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="first_name" class="form-label">First Name:</label>
+          <input type="text" class="form-control" id="first_name" name="first_name" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="last_name" class="form-label">Last Name:</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Confirm Password:</label>
+          <input type="password" class="form-control" id="confirm_password" name="confirm_password"
+            placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="occupation" class="form-label">Occupation:</label>
+            <input type="text" class="form-control" id="occupation" name="occupation"
+              placeholder="">
+          </div>
+        <button type="submit" class="btn btn-danger"> Register </button>
+
+      </form>
+</div>
+</body>
+</html>
