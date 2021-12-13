@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoDaysOFF!</title>
 </head>
+
 <body>
     <div class="container">
         <h1>No Days Off!</h1>
         <h1>Welcome {{logged_in_user.first_name}}! </h1>
+        <br>
+        <form action="addtask" method=post>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="title" class="form-label">Task</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" name="description" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="day_completed" class="form-label">Date Completed</label>
+                <input type="date" class="form-control" id="day_completed" name="day_completed" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="time_spent" class="form-label">Hours Spent</label>
+                <input type="number" class="form-control" id="time_spent" name="time_spent" placeholder="">
+            </div>
+            
+            <button type="submit" class="btn btn-danger"> Add Completed Task </button>
+        </form>
+        <div class="tasks">
+            {%for task in all_tasks%}
+            {{task.title}}
+            {%endfor%}
+        </div>
+
     </div>
+
+
 </body>
+
 </html>

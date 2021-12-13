@@ -66,3 +66,18 @@ def welcome(request):
         'all_tasks' : all_tasks
         }
         return render(request,'welcome.html',context)
+def addtask(request):
+    logged_in_user = User.objects.get(id=request.session['user_id'])
+    all_tasks = Task.objects.all()
+    new_task = Task.objects.create(
+        title = request.POST['title'],
+        description = request.POST['description'],
+        day_completed = request.POST['day_completed'],
+        time_spent = request.POST['time_spent'],
+        completed_by = logged_in_user
+    )
+    context = {
+        'logged_in_user' : logged_in_user,
+        'all_tasks': all_tasks
+    }
+    return redirect('/welcome')

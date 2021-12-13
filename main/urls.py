@@ -4,5 +4,6 @@ urlpatterns = [
     path('', views.index),
     path('login', views.login),
     path('register', views.register),
-    path('welcome', views.welcome)
+    path('welcome', views.welcome),
+    path('addtask', views.addtask)
 ]
