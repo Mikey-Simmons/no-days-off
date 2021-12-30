@@ -6,19 +6,25 @@ body{
     
 }
 .login{
-    background-color: whitesmoke;
+    
     justify-content: center;
     width: 50%;
     height: 100%;
     padding-top: 20px;
+    color: whitesmoke;
 }
 label{
-display: flex !important;
+    display: flex !important;
     justify-content: center !important;
+    font-family: 'Poiret One', cursive;
+     font-weight: bolder;
 }
 h1.login{
     display: flex;
     justify-content: center;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder;
+    
 }
 .button_login{
     display: flex !important;
@@ -32,12 +38,12 @@ h1.login{
     background-color: red !important;
 }
 .register{
-    background-color: #3a86ff;
+    
     justify-content: center;
     width: 50%;
     color: whitesmoke;
     padding-top: 20px;
-    flex: 1;
+    
    
 }
 .log{
@@ -47,10 +53,14 @@ h1.login{
 .reg{
     display: flex;
     justify-content: center;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder;
 }
 h1.register{
     display: flex;
     justify-content: center;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder;
 }
 .title{
     display: flex;
@@ -59,4 +69,19 @@ h1.register{
 }
 h1.title{
     font-size: 70px;
+     font-family: 'Poiret One', cursive;
+     font-weight: bolder;
+}
+.footer
+{
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    font-family: 'Poiret One', cursive;
+     font-weight: bolder;
+     padding-top: 200px;
+}
+.mb-3{
+    padding-left: 50px;
+    padding-right: 50px;
 }
