@@ -61,9 +61,12 @@ def welcome(request):
     if 'user_id' in request.session:
         logged_in_user = User.objects.get(id=request.session['user_id'])
         all_tasks = Task.objects.all()
+        user_tasks = logged_in_user.tasks_uploaded
+        score = len(all_tasks)
         context = {
         'logged_in_user': logged_in_user,
-        'all_tasks' : all_tasks
+        'all_tasks' : all_tasks,
+        'score': score,
         }
         return render(request,'welcome.html',context)
 def addtask(request):
@@ -76,6 +79,9 @@ def addtask(request):
         time_spent = request.POST['time_spent'],
         completed_by = logged_in_user
     )
+    logged_in_user.score +=1 
+    logged_in_user.save()
+
     context = {
         'logged_in_user' : logged_in_user,
         'all_tasks': all_tasks

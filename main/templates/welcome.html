@@ -17,6 +17,7 @@
     <div class="container">
         <h1>No Days Off!</h1>
         <h1>Welcome {{logged_in_user.first_name}}! </h1>
+        <h1>Your Score is {{logged_in_user.score}} </h1>
         <br>
         <form action="addtask" method=post>
             {% csrf_token %}
@@ -43,6 +44,7 @@
             {%for task in all_tasks%}
             {%if task.completed_by == logged_in_user%}
             {{task.title}}
+            
             {%endif%}
             {%endfor%}
         </div>
