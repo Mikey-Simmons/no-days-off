@@ -87,3 +87,5 @@ def addtask(request):
         'all_tasks': all_tasks
     }
     return redirect('/welcome')
+def new_account(request):
+    return render(request,'register.html')
