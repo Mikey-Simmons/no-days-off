@@ -89,3 +89,30 @@ h1.title{
     padding-left: 45%;
     padding-right: 45%;
 }
+nav{
+    display: flex !important;
+    justify-content: center !important;
+}
+ul.navbar-nav{
+    display: flex !important;
+    justify-content: center !important;
+}
+a.nav-link {
+    color: whitesmoke;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder;
+    font-size: x-large;
+}
+a.nav-link:hover{
+    color: #3a86ff;
+}
+.table-primary{
+    padding-top: 1000px;
+}
+table{
+    color: whitesmoke !important;
+}
+tr.center{
+    display: flex;
+    justify-content: center;
+}

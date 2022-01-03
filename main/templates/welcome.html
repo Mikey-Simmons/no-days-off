@@ -21,12 +21,46 @@
     <div class="title">
         <h1 class="title">No Days Off!</h1>
       </div>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
+      </ul>
     <div class="container">
         
-        <h1>Welcome {{logged_in_user.first_name}}! </h1>
-        <h1>Your Score is {{logged_in_user.score}} </h1>
-        <br>
-        <form action="addtask" method=post>
+       
+        
+        <table class="table table-primary-borderless">
+          
+            <thead>
+              <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Time Spent</th>
+                <th scope="col">Completed on</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {% for task in all_tasks%}
+                <th scope="row">{{task.title}}</th>
+                <td> {{task.time_spent}} Hours</td>
+                <td> {{task.day_completed}}</td>
+              </tr>
+              
+            </tbody>
+            {% endfor %}
+            
+          </table>
+          
+          
+        
+ <!--    <form action="addtask" method=post>
             {% csrf_token %}
             <div class="mb-3">
                 <label for="title" class="form-label">Task</label>
@@ -47,14 +81,7 @@
             
             <button type="submit" class="btn btn-danger"> Add Completed Task </button>
         </form>
-        <div class="tasks">
-            {%for task in all_tasks%}
-            {%if task.completed_by == logged_in_user%}
-            {{task.title}}
-            
-            {%endif%}
-            {%endfor%}
-        </div>
+       --> 
 
     </div>
 
