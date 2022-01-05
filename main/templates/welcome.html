@@ -29,9 +29,12 @@
           <a class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
+      <div class="title2">
+        <h1 class="title2">Tasks</h1>
+      </div>
     <div class="table_container">
         
        
@@ -41,19 +44,21 @@
             <thead>
               <tr>
                 <th scope="col">Task</th>
-                <th scope="col">Time Spent</th>
+                <th scope="col">Time</th>
                 <th scope="col">Date</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 {% for task in all_tasks%}
+                {%if task.completed_by == logged_in_user%}
                 <td>{{task.title}}</td>
                 <td> {{task.time_spent}} Hours</td>
                 <td> {{task.day_completed}}</td>
               </tr>
               
             </tbody>
+            {%endif%}
             {% endfor %}
             
           </table>
@@ -82,7 +87,9 @@
             <button type="submit" class="btn btn-danger"> Add Completed Task </button>
         </form>
        --> 
-
+       <div class="footer">
+        <h2>Your score is {{logged_in_user.score}}.  </h2>
+      </div>
     
 
 

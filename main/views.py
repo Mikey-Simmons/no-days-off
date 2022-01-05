@@ -89,3 +89,7 @@ def addtask(request):
     return redirect('/welcome')
 def new_account(request):
     return render(request,'register.html')
+
+def logout(request):
+    request.session.clear()
+    return redirect('/')
