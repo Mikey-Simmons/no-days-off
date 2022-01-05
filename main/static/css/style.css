@@ -123,6 +123,8 @@ table{
     width: 350px !important;
     max-height: 400px ;
     overflow: auto !important;
+    font-family: 'Poiret One', cursive;
+    font-weight: bolder;
 display: inline-block;
 direction:rtl
   }
@@ -140,4 +142,10 @@ direction:rtl
 }
 th{
     font-size: 18px;
+}
+
+.modal_container{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
 }
