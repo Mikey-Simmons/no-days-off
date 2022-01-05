@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    justify-content: space-between;
 }
 body{
     background-image: linear-gradient(to right, #3a86ff, #ff006e);
@@ -106,13 +107,26 @@ a.nav-link {
 a.nav-link:hover{
     color: #3a86ff;
 }
-.table-primary{
-    padding-top: 1000px;
-}
+
 table{
     color: whitesmoke !important;
+    width: 400px !important;
+    max-height: 500px ;
+    overflow: auto !important;
+display: inline-block;
+  }
+
+  .table-wrapper {
+    max-height: 100px;
+    overflow: auto;
+    display:inline-block;
+  }
+.table_container{
+    margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  display: flex;
 }
-tr.center{
-    display: flex;
-    justify-content: center;
+th{
+    font-size: 18px;
 }
