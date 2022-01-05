@@ -64,8 +64,8 @@
           </table>
           
           </div>
-        
- <!--    <form action="addtask" method=post>
+     <!--
+   <form action="addtask" method=post>
             {% csrf_token %}
             <div class="mb-3">
                 <label for="title" class="form-label">Task</label>
@@ -86,10 +86,14 @@
             
             <button type="submit" class="btn btn-danger"> Add Completed Task </button>
         </form>
-       --> 
+      -->   
        <div class="footer">
-        <h2>Your score is {{logged_in_user.score}}.  </h2>
+       
+     
+        <h2>Your daily score: {{daily_score}}  </h2>
       </div>
+      
+      
     
 
 
