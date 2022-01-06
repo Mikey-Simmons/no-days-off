@@ -110,6 +110,7 @@ def profile(request):
     for task in all_tasks:
         if task.day_completed== today_date and task.completed_by == logged_in_user:
              daily_score = daily_score + 1
+    
     context = {
     'logged_in_user': logged_in_user,
     'all_tasks' : all_tasks,
