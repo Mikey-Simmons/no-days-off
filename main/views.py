@@ -117,4 +117,4 @@ def profile(request):
     'today_date': today_date,
     'user_tasks': user_tasks
     }
-    return render(request,'profile.html')
+    return render(request,'profile.html',context)
