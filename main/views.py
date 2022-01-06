@@ -100,3 +100,21 @@ def new_account(request):
 def logout(request):
     request.session.clear()
     return redirect('/')
+def profile(request):
+    logged_in_user = User.objects.get(id=request.session['user_id'])
+    logged_in_user = User.objects.get(id=request.session['user_id'])
+    all_tasks = Task.objects.all()
+    user_tasks = logged_in_user.tasks_uploaded
+    today_date = date.today()
+    daily_score =0
+    for task in all_tasks:
+        if task.day_completed== today_date and task.completed_by == logged_in_user:
+             daily_score = daily_score + 1
+    context = {
+    'logged_in_user': logged_in_user,
+    'all_tasks' : all_tasks,
+    'daily_score': daily_score,
+    'today_date': today_date,
+    'user_tasks': user_tasks
+    }
+    return render(request,'profile.html')
