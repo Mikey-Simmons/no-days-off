@@ -44,8 +44,9 @@
             <thead>
               <tr>
                 <th scope="col">Task</th>
-                <th scope="col">Time</th>
+                <th scope="col">Time Spent</th>
                 <th scope="col">Date</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
@@ -55,6 +56,7 @@
                 <td>{{task.title}}</td>
                 <td> {{task.time_spent}} Hours</td>
                 <td> {{task.day_completed}}</td>
+                <td> {{task.description}}</td>
               </tr>
               
             </tbody>
@@ -137,7 +139,7 @@
        <div class="footer">
        
      
-        <h2>Your daily score: {{daily_score}}  </h2>
+        <h2>Your productivity score for today: {{daily_score}}  </h2>
       </div>
       
 
