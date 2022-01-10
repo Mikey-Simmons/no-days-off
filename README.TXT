@@ -11,3 +11,6 @@ Technogies used:
 -Bootstrap
 -github
 -SQLite
+-JavaScript
+-jQuery
+-
