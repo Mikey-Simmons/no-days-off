@@ -71,6 +71,8 @@ def welcome(request):
         message = ""
         if daily_score > 2:
             message="You're on a roll today keep it up!"
+        if daily_score == 0:
+            message="Lets get some work done today!"
         context = {
         'logged_in_user': logged_in_user,
         'all_tasks' : all_tasks,
