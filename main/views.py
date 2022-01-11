@@ -68,12 +68,16 @@ def welcome(request):
         for task in all_tasks:
             if task.day_completed== today_date and task.completed_by == logged_in_user:
                 daily_score = daily_score + 1
+        message = ""
+        if daily_score > 2:
+            message="You're on a roll today keep it up!"
         context = {
         'logged_in_user': logged_in_user,
         'all_tasks' : all_tasks,
         'daily_score': daily_score,
         'today_date': today_date,
-        'user_tasks': user_tasks
+        'user_tasks': user_tasks,
+        'message':message,
         }
         return render(request,'welcome.html',context)
 def addtask(request):
