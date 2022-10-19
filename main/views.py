@@ -92,7 +92,7 @@ def addtask(request):
     new_task = Task.objects.create(
         title = request.POST['title'],
         description = request.POST['description'],
-        day_completed = request.POST['day_completed'],
+        day_to_be_completed = request.POST['day_to_be_completed'],
         time_spent = request.POST['time_spent'],
         completed_by = logged_in_user
     )

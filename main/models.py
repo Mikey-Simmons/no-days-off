@@ -1,4 +1,6 @@
+from email.policy import default
 from django.db import models
+from datetime import datetime
 import re
 # Create your models here.
 
@@ -42,7 +44,9 @@ class User(models.Model):
 class Task(models.Model):
     title= models.CharField(max_length=200)
     description= models.CharField(max_length=1000)
-    day_completed = models.DateField()
+    day_to_be_completed = models.DateField(default=datetime.now, blank=True)
+    is_task_completed = models.BooleanField(default=False)
     time_spent = models.IntegerField()
     completed_by = models.ForeignKey(User, related_name="tasks_uploaded", on_delete= models.CASCADE)
+
     
