@@ -47,6 +47,7 @@ class Task(models.Model):
     day_to_be_completed = models.DateField(default=datetime.now, blank=True)
     is_task_completed = models.BooleanField(default=False)
     time_spent = models.IntegerField()
+    priority_level = models.IntegerField(default=1)
     completed_by = models.ForeignKey(User, related_name="tasks_uploaded", on_delete= models.CASCADE)
 
     
